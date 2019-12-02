@@ -3,7 +3,7 @@
 
 #include <iostream>
 
-void AnciiPaint(int x, const char* y) 
+void AnciiPaint(int x, const char* y) //Вывод линии символов
 {
 	for (int i = 0; i < x; i++)
 	{
@@ -11,7 +11,64 @@ void AnciiPaint(int x, const char* y)
 	}
 }
 
-void MyLogo(const char* date)
+void AnciiPaint(int x, const char* y, const char* text, const char* place) //Вывод линии символов с текстом и центрированием
+{
+	x = x - int(strlen(text));
+	if (place == "center") //Центрирование по центру
+	{
+		for (int i = 0; i < x / 2; i++)
+		{
+			std::cout << y;
+		}
+		std::cout << text;
+		for (int i = 0; i < x / 2; i++)
+		{
+			std::cout << y;
+		}
+
+	}
+	else
+	{
+		if (place == "left") //По левому
+		{
+			std::cout << y << text;
+			for (int i = 0; i < x - 1; i++)
+			{
+				std::cout << y;
+			}
+		}
+		else
+		{
+			if (place == "right") //По правому боку
+			{
+				for (int i = 0; i < x - 1; i++)
+				{
+					std::cout << y;
+				}
+				std::cout << text << y;
+			}
+			else
+			{
+				for (int i = 0; i < x / 2; i++)
+				{
+					std::cout << y;
+				}
+				std::cout << text;
+				for (int i = 0; i < x / 2; i++)
+				{
+					std::cout << y;
+				}
+			}
+		}
+	}
+
+	if (int(strlen(text))&1 ^ (x+ int(strlen(text)))&1) //Во избежание потери символов из-за округления
+	{
+		std::cout << y;
+	}
+}
+
+void MyLogo(const char* date) //Шапка программы. Подпись, дата и т.д
 {
 	printf("             ____           ____    ________ \n");
 	printf("            /   /          /   /   /  _____/ \n");

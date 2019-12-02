@@ -18,17 +18,10 @@ int main()
 	cin >> start_point;
 	
 	cout << "\xC9";											//Очень большие рисовашки!
-	AnciiPaint(15, "\xCD");
+	AnciiPaint(15, "\xCD", "Login", "center");
 	cout << "\xD1";
-	AnciiPaint(15, "\xCD");
+	AnciiPaint(15, "\xCD", "Password", "center");
 	cout << "\xBB\n";
-
-	cout << "\xBA     Login     \xB3   Password    \xBA\n";
-	cout << "\xC7";
-	AnciiPaint(15, "\xC4");
-	cout << "\xC5";
-	AnciiPaint(15, "\xC4");
-	cout << "\xB6\n";
 
 	bool flag = false;
 	for (int i = 0; i < stud; i++)//Main loop
