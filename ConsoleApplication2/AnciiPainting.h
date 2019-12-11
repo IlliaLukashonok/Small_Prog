@@ -1,9 +1,13 @@
-#ifndef AnciiPainting
+п»ї#ifndef AnciiPainting
 #define AnciiPainting
 
 #include <iostream>
-
-void AnciiPaint(int x, const char* y) //Вывод линии символов
+/*
+Р’С‹РІРѕРґ Р»РёРЅРёРё СЃРёРјРІРѕР»РѕРІ.
+РџРµСЂРІС‹Р№ Р°СЂРіСѓРјРµРЅС‚ - РєРѕР»-РІРѕ СЃРёРјРІРѕР»РѕРІ.
+Р’С‚РѕСЂРѕР№ - СЃРёРјРІРѕР»
+*/
+void AnciiPaint(int x, const char* y)
 {
 	for (int i = 0; i < x; i++)
 	{
@@ -11,10 +15,17 @@ void AnciiPaint(int x, const char* y) //Вывод линии символов
 	}
 }
 
-void AnciiPaint(int x, const char* y, const char* text, const char* place) //Вывод линии символов с текстом и центрированием
+/*
+Р’С‹РІР°Рґ Р»С–РЅС–С– СЃС‹РјР±Р°Р»Р°Сћ Р· С‚СЌРєСЃС‚Р°Рј С– С†СЌРЅС‚СЂРѕСћРєР°Р№ С‚СЌРєСЃС‚Сѓ
+РџРµСЂС€С‹ Р°СЂРіСѓРјСЌРЅС‚ - РєРѕР»СЊРєР°СЃСЊС†СЊ СЃС–РјР±Р°Р»Р°Сћ
+Р”СЂСѓРіС– - СЃС–РјР±Р°Р»
+РўСЂСЌС†С– - С‚СЌРєСЃС‚ СЏРєС– С‚СЂСЌ СЂР°Р·СЊРјРµСЃСЊС†С–С†СЊ СЃСЏСЂРѕРґ СЃС–РјР±Р°Р»РѕСћ
+Р§Р°С†СЊРІРµСЂС‚С‹ - РґР·Рµ С‚СЂСЌ СЂР°Р·СЊРјРµСЃСЊС†С–С†СЊ Р°РґРЅРѕСЃРЅР° СЃС–РјР±Р°Р»Р°Сћ
+*/
+void AnciiPaint(int x, const char* y, const char* text, const char* place)
 {
 	x = x - int(strlen(text));
-	if (place == "center") //Центрирование по центру
+	if (place == "center") //Р¦РµРЅС‚СЂРёСЂРѕРІР°РЅРёРµ РїРѕ С†РµРЅС‚СЂСѓ
 	{
 		for (int i = 0; i < x / 2; i++)
 		{
@@ -29,7 +40,7 @@ void AnciiPaint(int x, const char* y, const char* text, const char* place) //Выв
 	}
 	else
 	{
-		if (place == "left") //По левому
+		if (place == "left") //РџРѕ Р»РµРІРѕРјСѓ
 		{
 			std::cout << y << text;
 			for (int i = 0; i < x - 1; i++)
@@ -39,7 +50,7 @@ void AnciiPaint(int x, const char* y, const char* text, const char* place) //Выв
 		}
 		else
 		{
-			if (place == "right") //По правому боку
+			if (place == "right") //РџРѕ РїСЂР°РІРѕРјСѓ Р±РѕРєСѓ
 			{
 				for (int i = 0; i < x - 1; i++)
 				{
@@ -62,13 +73,13 @@ void AnciiPaint(int x, const char* y, const char* text, const char* place) //Выв
 		}
 	}
 
-	if (int(strlen(text))&1 ^ (x+ int(strlen(text)))&1) //Во избежание потери символов из-за округления
+	if (int(strlen(text))&1 ^ (x+ int(strlen(text)))&1) //Р’Рѕ РёР·Р±РµР¶Р°РЅРёРµ РїРѕС‚РµСЂРё СЃРёРјРІРѕР»РѕРІ РёР·-Р·Р° РѕРєСЂСѓРіР»РµРЅРёСЏ
 	{
 		std::cout << y;
 	}
 }
 
-void MyLogo(const char* date) //Шапка программы. Подпись, дата и т.д
+void MyLogo(const char* date) //РЁР°РїРєР° РїСЂРѕРіСЂР°РјРјС‹. РџРѕРґРїРёСЃСЊ, РґР°С‚Р° Рё С‚.Рґ
 {
 	printf("             ____           ____    ________ \n");
 	printf("            /   /          /   /   /  _____/ \n");
